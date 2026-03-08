@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElderConnect - IBP Old Age Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif;}
+body{line-height:1.6; color:#333;}
+a{text-decoration:none; color:#333;}
+img{max-width:100%; display:block;}
+h1,h2,h3{margin-bottom:10px;}
+button{cursor:pointer;}
+/* Navbar */
+nav{background:#6b4226; padding:10px 20px; position:sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center;}
+nav img.logo{height:50px;}
+nav ul{display:flex; list-style:none;}
+nav ul li{margin:0 10px;}
+nav ul li a{color:#fff; font-weight:700; padding:8px 12px; transition:0.3s;}
+nav ul li a:hover{background:#fff; color:#6b4226; border-radius:5px;}
+.hamburger{display:none; cursor:pointer; font-size:1.5rem; color:#fff;}
+
+/* Mobile Sidebar */
+.sidebar{z-index: 1000; position:fixed; right:-250px; top:0; width:250px; height:100%; background:#6b4226; color:#fff; transition:0.3s; padding-top:60px;}
+.sidebar ul{list-style:none; padding-left:0;}
+.sidebar ul li{margin:20px 0; text-align:center;}
+.sidebar ul li a{color:#fff; font-weight:700;}
+
+/* Hero Slider */
+.hero{position:relative; overflow:hidden; height:60vh;}
+.hero img{width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0; transition:opacity 1s ease-in-out;}
+.hero img.active{opacity:1;}
+.hero-text{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#fff; background:rgba(0,0,0,0.5); padding:20px 30px; border-radius:10px; text-align:center;}
+.hero-text h1{font-size:2.5rem;}
+.hero-text p{font-size:1.2rem;}
+
+section{padding:50px 20px; max-width:1200px; margin:0 auto; display:none;}
+section.active{display:block;}
+section h2{text-align:center; color:#6b4226; margin-bottom:30px; font-size:2rem;}
+.about,.highlights,.home-content,.gallery{display:flex; flex-wrap:wrap; gap:20px; justify-content:center; text-align:center;}
+.about div,.highlights div,.home-content div,.gallery img{flex:1 1 250px; background:#f5f0e1; padding:20px; border-radius:10px;}
+
+form{max-width:600px; margin:0 auto; background:#f5f0e1; padding:20px; border-radius:10px;}
+form label{display:block; margin-top:15px; font-weight:700;}
+form input, form select, form textarea{width:100%; padding:10px; margin-top:5px; border-radius:5px; border:1px solid #ccc;}
+form button{background:#6b4226; color:#fff; border:none; padding:10px 20px; margin-top:15px; border-radius:5px;}
+
+table{width:100%; border-collapse:collapse; margin-top:20px;}
+th, td{border:1px solid #ccc; padding:10px; text-align:center;}
+th{background:#6b4226; color:#fff;}
+
+.feedbacks{margin-top:20px;}
+.feedbacks div{background:#f5f0e1; padding:15px; border-radius:10px; margin-bottom:15px;}
+
+footer{background:#6b4226; color:#fff; text-align:center; padding:20px; margin-top:50px;}
+
+@media(max-width:600px){
+  nav ul{display:none;}
+  .hamburger{display:block;}
+  .about,.highlights,.home-content,.gallery{flex-direction:column;}
+  .hero-text h1{font-size:1.8rem;}
+  .hero-text p{font-size:1rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <img src="images/logo.png" class="logo" alt="Logo">
+  <ul>
+    <li><a href="#" data-target="home">Home</a></li>
+    <li><a href="#" data-target="about">About Us</a></li>
+    <li><a href="#" data-target="booking">Room Booking</a></li>
+    <li><a href="#" data-target="volunteer">Volunteer Visit</a></li>
+    <li><a href="#" data-target="donation">Donate</a></li>
+    <li><a href="#" data-target="schedule">Schedule</a></li>
+    <li><a href="#" data-target="feedback">Feedback</a></li>
+    <li><a href="#" data-target="gallery">Gallery</a></li>
+  </ul>
+  <div class="hamburger">&#9776;</div>
+</nav>
+
+<div class="sidebar">
+  <ul>
+    <li><a href="#" data-target="home">Home</a></li>
+    <li><a href="#" data-target="about">About Us</a></li>
+    <li><a href="#" data-target="booking">Room Booking</a></li>
+    <li><a href="#" data-target="volunteer">Volunteer Visit</a></li>
+    <li><a href="#" data-target="donation">Donate</a></li>
+    <li><a href="#" data-target="schedule">Schedule</a></li>
+    <li><a href="#" data-target="feedback">Feedback</a></li>
+    <li><a href="#" data-target="gallery">Gallery</a></li>
+  </ul>
+</div>
+
+<!-- Home / Hero Slider -->
+<div id="home" class="hero active">
+  <img src="https://tse1.mm.bing.net/th/id/OIP.zB1rsS80G2GPbY0mMvKnigHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" class="active" alt="Elder Home 1">
+  <img src="https://tse2.mm.bing.net/th/id/OIP.JgxVpmZ2vKEWHfTbxk2BzgHaF1?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Elder Home 2">
+  <div class="hero-text">
+    <h1>Welcome to IBP Old Age Home</h1>
+    <p>Spend meaningful time with elders, volunteer, or donate to support our home.</p>
+  </div>
+</div>
+
+<!-- Home Content / About Vridhaashram -->
+<section class="active" id="homeContent">
+  <h2>About IBP Vridhaashram</h2>
+  <div class="home-content">
+    <div>
+      <img src="https://tse1.mm.bing.net/th/id/OIP.zB1rsS80G2GPbY0mMvKnigHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Elder care">
+      <p>IBP Vridhaashram provides comprehensive care for elderly residents, focusing on comfort, health, and companionship.</p>
+    </div>
+    <div>
+      <img src="https://tse2.mm.bing.net/th/id/OIP.JgxVpmZ2vKEWHfTbxk2BzgHaF1?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Activities">
+      <p>Regular activities such as storytelling, yoga, games, music, and cultural events keep our residents active and happy.</p>
+    </div>
+    <div>
+      <img src="https://tse1.mm.bing.net/th/id/OIP.zB1rsS80G2GPbY0mMvKnigHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Facilities">
+      <p>Safe, clean, and comfortable facilities with dedicated staff ensure a nurturing environment for elders.</p>
+    </div>
+  </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about">
+  <h2>About Us</h2>
+  <div class="about">
+    <div>
+      <h3>Our Mission</h3>
+      <p>Providing love, care, and companionship to the elderly residents at IBP.</p>
+    </div>
+    <div>
+      <h3>Our Vision</h3>
+      <p>Creating a welcoming environment for elders and volunteers to connect meaningfully.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Room Booking -->
+<section id="booking">
+  <h2>Room Booking</h2>
+  <form id="bookingForm">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+    <label for="room">Room Type</label>
+    <select id="room" required>
+      <option value="single">Single Room</option>
+      <option value="double">Double Room</option>
+      <option value="dorm">Dormitory</option>
+    </select>
+    <label for="dates">Stay Dates</label>
+    <input type="text" id="dates" placeholder="DD/MM/YYYY - DD/MM/YYYY" required>
+    <button type="submit">Send Booking Request</button>
+  </form>
+</section>
+
+<!-- Volunteer Visit -->
+<section id="volunteer">
+  <h2>Volunteer Visit Request</h2>
+  <form id="volunteerForm">
+    <label for="volname">Full Name</label>
+    <input type="text" id="volname" required>
+    <label for="volemail">Email</label>
+    <input type="email" id="volemail" required>
+    <label for="voldate">Preferred Date & Time</label>
+    <input type="text" id="voldate" placeholder="DD/MM/YYYY HH:MM" required>
+    <label for="activity">Activity Preference</label>
+    <select id="activity" required>
+      <option value="storytelling">Storytelling</option>
+      <option value="music">Music</option>
+      <option value="games">Games</option>
+      <option value="helping">Helping Elders</option>
+    </select>
+    <button type="submit">Send Visit Request</button>
+  </form>
+</section>
+
+<!-- Donate -->
+<section id="donation">
+  <h2>Donate / Payment</h2>
+  <form id="donationForm">
+    <label for="donorName">Full Name</label>
+    <input type="text" id="donorName" required>
+    <label for="donorEmail">Email</label>
+    <input type="email" id="donorEmail" required>
+    <label for="amount">Amount</label>
+    <input type="number" id="amount" required>
+    <label for="paymentMethod">Payment Method</label>
+    <select id="paymentMethod">
+      <option value="upi">UPI / QR Scan</option>
+      <option value="card">Credit / Debit Card</option>
+    </select>
+    <button type="submit">Donate Now</button>
+  </form>
+</section>
+
+<!-- Schedule -->
+<section id="schedule">
+  <h2>Daily Activity Schedule</h2>
+  <table>
+    <tr><th>Time</th><th>Activity</th></tr>
+    <tr><td>7:00 AM</td><td>Morning Yoga</td></tr>
+    <tr><td>9:00 AM</td><td>Breakfast & Social Time</td></tr>
+    <tr><td>10:30 AM</td><td>Games / Storytelling</td></tr>
+    <tr><td>1:00 PM</td><td>Lunch & Break</td></tr>
+    <tr><td>3:00 PM</td><td>Music / Craft Activities</td></tr>
+    <tr><td>5:00 PM</td><td>Evening Bhajan / Cultural</td></tr>
+    <tr><td>7:00 PM</td><td>Dinner & Relax</td></tr>
+  </table>
+</section>
+
+<!-- Feedback -->
+<section id="feedback">
+  <h2>Feedback</h2>
+  <form id="feedbackForm">
+    <label for="fName">Full Name</label>
+    <input type="text" id="fName" required>
+    <label for="fMessage">Message</label>
+    <textarea id="fMessage" rows="4" required></textarea>
+    <button type="submit">Submit Feedback</button>
+  </form>
+  <div class="feedbacks">
+    <div><strong>Rohit:</strong> Wonderful experience, loved spending time with elders!</div>
+    <div><strong>Priya:</strong> Clean, friendly, and meaningful stay.</div>
+    <div><strong>Arjun:</strong> Great management and activities for volunteers.</div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.zB1rsS80G2GPbY0mMvKnigHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Elder Home 1">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.JgxVpmZ2vKEWHfTbxk2BzgHaF1?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Elder Home 2">
+  </div>
+</section>
+
+<footer>
+  &copy; IBP Old Age Home | Made by Anuj Gupta
+</footer>
+
+
+<script>
+// Hero slider
+let heroImages = document.querySelectorAll('.hero img');
+let current = 0;
+setInterval(() => {
+  if(document.querySelector('.hero.active')){
+    heroImages.forEach(img => img.classList.remove('active'));
+    current = (current+1)%heroImages.length;
+    heroImages[current].classList.add('active');
+  }
+},4000);
+
+// Navbar section toggle
+const navLinks = document.querySelectorAll('nav ul li a, .sidebar ul li a');
+const hero = document.getElementById('home');
+const homeContent = document.getElementById('homeContent');
+const allSections = document.querySelectorAll('section');
+navLinks.forEach(link=>{
+  link.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const target = link.getAttribute('data-target');
+    allSections.forEach(sec=>sec.classList.remove('active'));
+
+    if(target==='home'){
+      hero.style.display = 'block';           // hero दिखाओ
+      hero.classList.add('active');
+      homeContent.classList.add('active');
+    } else {
+      hero.style.display = 'none';            // hero छुपाओ
+      hero.classList.remove('active');
+      homeContent.classList.remove('active');
+      document.getElementById(target).classList.add('active');
+    }
+
+    if(window.innerWidth<=600){
+      document.querySelector('.sidebar').style.right='-250px';
+    }
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+
+// Hamburger toggle
+const hamburger = document.querySelector('.hamburger');
+const sidebar = document.querySelector('.sidebar');
+hamburger.addEventListener('click', ()=>{
+  sidebar.style.right = sidebar.style.right==='0px' ? '-250px' : '0px';
+});
+
+// Dummy form submissions
+document.getElementById('bookingForm').addEventListener('submit', e=>{e.preventDefault(); alert('Booking request sent!'); e.target.reset();});
+document.getElementById('volunteerForm').addEventListener('submit', e=>{e.preventDefault(); alert('Volunteer request sent!'); e.target.reset();});
+document.getElementById('donationForm').addEventListener('submit', e=>{e.preventDefault(); alert('Thank you for your donation!'); e.target.reset();});
+document.getElementById('feedbackForm').addEventListener('submit', e=>{e.preventDefault(); alert('Feedback submitted!'); e.target.reset();});
+</script>
+
+</body>
+</html>
